@@ -1,0 +1,45 @@
+<!--- 
+  This is a reusable WebC component.
+  It contains its own HTML, Scoped CSS, and Client-side JS.
+--->
+
+<button type="button" class="my-btn" onclick="this.nextElementSibling.innerText++">
+  <!-- @text replaces the content with the prop value -->
+  <span @text="label">Click Me</span>
+</button>
+<span class="count">0</span>
+
+<!--- 
+  SCOPED CSS:
+  Using `webc:scoped` ensures these styles ONLY apply to this component.
+  Eleventy will bundle this into a unique class name automatically.
+--->
+<style webc:scoped>
+  .my-btn {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .my-btn:hover {
+    background-color: #4f46e5;
+  }
+  .count {
+    font-weight: bold;
+    margin-left: 10px;
+    font-family: monospace;
+    font-size: 1.2rem;
+  }
+</style>
+
+<!---
+  COMPONENT JS:
+  This JS is specific to this component. WebC will bundle this
+  into the main JS bundle we output in index.webc.
+--->
+<script>
+  console.log("The Counter Button component has loaded!");
+</script>

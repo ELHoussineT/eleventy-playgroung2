@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eleventy WebC Demo</title>
+
+  <!-- 1. GLOBAL CSS: Loaded via standard link tag -->
+  <link rel="stylesheet" href="/assets/global.css">
+
+  <!-- 2. COMPONENT CSS BUNDLE: WebC aggregates styles from all components used on this page here -->
+  <style @raw="getBundle('css')" webc:keep></style>
+</head>
+<body>
+
+  <main>
+    <!-- MEDIA POC: Displaying the static asset -->
+    <img src="/assets/image.jpg" alt="POC Logo" class="site-logo">
+    
+    <h1>My Static Site</h1>
+    <p>This page demonstrates global assets vs reusable components.</p>
+
+    <hr>
+
+    <!-- Using the component twice to prove reusability -->
+    <h3>Instance 1:</h3>
+    <counter-button label="Add One"></counter-button>
+
+    <h3>Instance 2:</h3>
+    <counter-button label="Increment"></counter-button>
+    
+    <hr>
+    
+    <p class="global-text">This text is styled by global.css</p>
+  </main>
+
+  <!-- 1. GLOBAL JS: Loaded via standard script tag -->
+  <script src="/assets/global.js"></script>
+
+  <!-- 2. COMPONENT JS BUNDLE: WebC aggregates scripts from components here -->
+  <script @raw="getBundle('js')" webc:keep></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* These are standard global styles, not scoped to any component */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9fafb;
+  color: #1f2937;
+  text-align: center; /* Center align for the POC */
+}
+
+h1 {
+  color: #111827;
+  margin-top: 1rem;
+}
+
+.global-text {
+  color: #059669; /* Green */
+  font-style: italic;
+}
+
+/* MEDIA POC STYLES */
+.site-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
